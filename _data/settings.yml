@@ -54,7 +54,7 @@ contact: >
 
 projects:
 - {name: 'Jetson Face Mask Detection', folder: 'proj-1', file: 'projects/proj-1.html'}
-- {name: 'Southpaw Custom Keyboard, folder: 'proj-2', file: 'projects/proj-2.html'}
+- {name: 'Southpaw Custom Keyboard', folder: 'proj-2', file: 'projects/proj-2.html'}
 
 #-------------------------------
 # Contact Section
