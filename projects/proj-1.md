@@ -1,9 +1,13 @@
 ---
 layout: post
-title: 'Project One'
+title: 'Deepstream Mask Detection'
 ---
-Mauris velit metus, tempor gravida nulla eget, auctor accumsan tellus. Curabitur volutpat sed dolor quis tempus. In scelerisque aliquam felis at tincidunt. Proin non augue fringilla, [pretium justo vitae](#), maximus dui. Nunc ipsum nisi, fermentum sit amet volutpat cursus, sodales ac nisl. Quisque nec tellus sem. Cras pharetra felis non quam mollis, nec efficitur lectus aliquet. Maecenas ipsum felis, eleifend nec [semper venenatis](#), consequat ut nunc. Donec est augue, facilisis quis placerat sed, imperdiet sit amet neque. Maecenas nec risus metus. Nunc non condimentum ipsum. Phasellus consectetur dapibus massa, convallis iaculis nisi vestibulum id. Phasellus et fringilla augue. Donec consequat dui ut rutrum elementum. Aenean nisi arcu, ornare eu lacus vel, faucibus tempor tortor.
+This project was a CWRU funded project, training a ResNet-18 Neural Network with over 6000 images of facial data, both masked and unmasked individuals, to recognize and label faces using Nvidia's Deepstream technology. The system was based off of [Nvidia's mask-detection](https://github.com/NVIDIA-AI-IOT/face-mask-detection), however I retrained and pruned the model and Deepstream setup, to allow it to be more approachable and implementable on smaller scales. Their init
 
-{% include image.html url="http://www.gratisography.com" image="projects/proj-1/dog.jpg" %}
+The model produced was light enough to be run on a Jetson Nano that could run at a theoretical 25 FPS from a camera feed, as featured in the video below. This would allow a 'mask detection' system to be implemented in stores and University, to verify COVID-19 guidelines were being followed.
 
-{% include image.html url="http://www.gratisography.com" image="projects/proj-1/wall.jpg" %}
+However - there were some roadblocks with this project. Notably the Jetson nano is not all that powerful. This resulted on the model running into throughput/input limits as well as causing the Nano to throttle during deepstream usage. This probably could be circumvented by further pruning the model, though that does come at the cost of accuracy. Alternatively a stronger GPU, such as that in the Xavier NX, could have been used.
+
+{% include image.html image="projects/proj-1/shot1.jpg" %}
+
+{% include image.html image="projects/proj-1/shot2.jpg" %}
